@@ -22,7 +22,6 @@ export default function HomeScreen(props) {
                         const entity = doc.data()
                         entity.id = doc.id
                         newEntities.push(entity)
-                        console.log(newEntities)
                     });
                     setEntities(newEntities)
                 },

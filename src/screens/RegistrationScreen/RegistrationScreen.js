@@ -19,7 +19,7 @@ export default function RegistrationScreen({navigation}) {
             alert("Şifreler Eşleşmiyor")
             return
         }
-    
+
         firebase
             .auth()
             .createUserWithEmailAndPassword(email, password)
@@ -99,7 +99,7 @@ export default function RegistrationScreen({navigation}) {
                     <Text style={styles.buttonTitle}>Hesap Oluştur</Text>
                 </TouchableOpacity>
                 <View style={styles.footerView}>
-                    <Text style={styles.footerText}>Zaten hesabın var mı?  <Text onPress={onFooterLinkPress} style={styles.footerLink}>Oturum Aç</Text></Text>
+                    <Text style={styles.footerText}>Zaten hesabın var mı?  <Text onPress={onFooterLinkPress} style={styles.footerLink}>Giriş Yap</Text></Text>
                 </View>
             </KeyboardAwareScrollView>
         </View>

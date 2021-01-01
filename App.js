@@ -1,5 +1,6 @@
 import 'react-native-gesture-handler';
 import React, { useEffect, useState } from 'react'
+import {  View } from 'react-native';
 import { firebase } from './src/firebase/config'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
@@ -43,19 +44,19 @@ export default function App() {
   }
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        { user ? (
-          <Stack.Screen name="Anasayfa">
-            {props => <HomeScreen {...props} extraData={user} />}
-          </Stack.Screen>
-        ) : (
-          <>
-            <Stack.Screen name="Oturum Aç" component={LoginScreen} />
-            <Stack.Screen name="Kayıt Ol" component={RegistrationScreen} />
-          </>
-        )}
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Oturum Aç" component={LoginScreen} />
+
+            <Stack.Screen name="Anasayfa">
+              {props => <HomeScreen {...props} extraData={user} />}
+            </Stack.Screen>
+
+            <>
+              <Stack.Screen name="Kayıt Ol" component={RegistrationScreen} />
+            </>
+          
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
 }
